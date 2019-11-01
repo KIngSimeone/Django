@@ -19,7 +19,8 @@ from Apptwo import views
 from django.conf.urls import include
 
 urlpatterns = [
-    path('',views.index,name='index'),
-    path('ProTwo/',include('ProTwo.urls')),
+       
     path('admin/', admin.site.urls),
+    path('Apptwo/', include('Apptwo.urls')),
+    path('', views.index, name='index'),
 ]

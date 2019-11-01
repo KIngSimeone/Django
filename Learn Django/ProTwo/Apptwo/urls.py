@@ -1,4 +1,4 @@
-from AppTwo import views
+from Apptwo import views
 from django.urls import path
 
 
