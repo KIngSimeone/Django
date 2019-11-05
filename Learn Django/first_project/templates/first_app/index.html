@@ -1,12 +1,15 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
     <head>
         <meta charset="utf-8">
-        <title>First App</title>
+        <title>Loan Image</title>
+        <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
     </head>
     <body>
-        <h1>Hello this is index.html</h1>
+        <h1>Get quick loans</h1>
         {{ insert_me }}
+        <img src="{% static "images/loan.jpg" %}" alt="Loan Image"">
 
     </body>
 </html>
