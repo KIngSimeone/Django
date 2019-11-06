@@ -3,13 +3,36 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Loan Image</title>
+        <title>Django</title>
         <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
     </head>
     <body>
-        <h1>Get quick loans</h1>
-        {{ insert_me }}
-        <img src="{% static "images/loan.jpg" %}" alt="Loan Image"">
+        <h1>Welcome to Django</h1>
+        <h2>Access Records:</h2>
+        
 
+        <div class="djangotwo">
+            {% if access_records %}
+                <table>
+                    <thead>
+                        <th>Site Name</th>
+                        <th>Date Accessed</th>
+                    </thead>
+                
+
+
+                {% for acc in access_records %}
+                <tr>
+                    <td>{{ acc.name }}</td>
+                    <td>{{ acc.date }}</td>
+
+
+                </tr>
+                {% endfor %}
+                </table>  
+                {% else %}
+                <p>NO ACCESS RECORDS FOUND!!</p>  
+                {% endif %}
+        </div>
     </body>
 </html>
