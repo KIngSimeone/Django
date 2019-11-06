@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Django</title>
+        
+    </head>
+    <body>
+        <h1>Here are all users:</h1>
+        {% if userss %}
+            {% for us in userss %}
+                <p>User Info</p>
+                <ul>
+                    <li>{{ us.first_name }}</li>
+                    <li>{{ us.last_name }}</li>
+                    <li>{{ us.email }}</li>
+                </ul>
+            {% endfor %}
+        {% else %}
+            <p>No users available</p>
+        {% endif %}
+
+        
+    </body>
+</html>
