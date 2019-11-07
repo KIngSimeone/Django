@@ -4,23 +4,20 @@
     <head>
         <meta charset="utf-8">
         <title>Django</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         
     </head>
     <body>
-        <h1>Here are all users:</h1>
-        {% if userss %}
-            {% for us in userss %}
-                <p>User Info</p>
-                <ul>
-                    <li>{{ us.first_name }}</li>
-                    <li>{{ us.last_name }}</li>
-                    <li>{{ us.email }}</li>
-                </ul>
-            {% endfor %}
-        {% else %}
-            <p>No users available</p>
-        {% endif %}
-
+        <div class="container">
+            <h1>Please sign up here!</h1>
+            <form method="POST">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </form>
+        </div>
+        
+        
         
     </body>
 </html>
