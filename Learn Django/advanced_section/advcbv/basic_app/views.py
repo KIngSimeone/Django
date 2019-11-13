@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import View,TemplateView
-from django.views.generic import ListView,DetailView
+from django.views.generic import View,TemplateView,UpdateView,DeleteView
+from django.views.generic import ListView,DetailView,CreateView
 from . import models
+from django.urls import reverse_lazy
+
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -17,6 +19,18 @@ class SchoolDetailView(DetailView,):
     model = models.School
     template_name = 'basic_app/school_detail.html'
 
-        
+
+class SchoolCreateView(CreateView):
+    fields = ('name', 'principal','location')
+    model = models.School
+
+class SchoolUpdateView(UpdateView):
+    fields = ('name','principal')
+    model = models.School
+
+
+class SchoolDeleteView(DeleteView):
+    model = models.School
+    success_url = reverse_lazy("basic_app:list")
         
  
